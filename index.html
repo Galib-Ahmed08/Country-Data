@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CountryInfo Finder</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Country Info</a>
+      <div class="nav-buttons">
+        <button onclick="location.href='#'">Home</button>
+        <button onclick="location.href='#'">About</button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero & Search -->
+  <header class="hero">
+    <div class="container">
+      <h1>Search and Explore Country Details</h1>
+      <p>Explore country profiles and real-time weather</p>
+      <div class="search-container">
+        <input id="search-input" type="text" placeholder="Enter country name..." />
+        <button id="search-btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Results Grid -->
+  <main class="container">
+    <section id="results" class="grid"></section>
+  </main>
+
+  <!-- Details Modal -->
+  <div id="details-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-flag">
+          <img id="modal-flag-img" src="" alt="Country flag"/>
+        </div>
+        <div class="modal-info">
+          <h2 id="modal-title"></h2>
+          <p id="modal-region"></p>
+
+          <div class="modal-section">
+            <h3>Details</h3>
+            <p><strong>Capital:</strong> <span id="modal-capital"></span></p>
+            <p><strong>Population:</strong> <span id="modal-population"></span></p>
+            <p><strong>Languages:</strong> <span id="modal-languages"></span></p>
+            <p><strong>Currencies:</strong> <span id="modal-currencies"></span></p>
+          </div>
+
+          <div class="modal-section weather-ui">
+            <h3>Current Weather</h3>
+            <div class="weather-card">
+              <div class="weather-icon" id="modal-weather-icon">☀️</div>
+              <div class="weather-data">
+                <p><span id="modal-temp"></span>°C</p>
+                <p><span id="modal-wind"></span> m/s</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-close-details">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; Copyright by Galib Ahmed | 2221062 | IUB</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

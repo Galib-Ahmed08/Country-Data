@@ -1,0 +1,253 @@
+/* Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: #333;
+  background-color: #ffffff; /* White background */
+  padding-bottom: 60px;
+}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Navbar */
+.navbar {
+  background: #243c46;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons button {
+  background-color: #2972d1;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #1a5bb3;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url('https://rb.gy/8lz8ax') center/cover no-repeat;
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+  min-height: auto;
+  margin-bottom: 2rem;
+}
+.hero::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+.hero .container { 
+  position: relative; 
+  z-index: 1; 
+  padding: 2rem 0;
+}
+.hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+.hero p  { font-size: 1.2rem; margin-bottom: 1.5rem; }
+.search-container { 
+  display: flex; 
+  justify-content: center; 
+  margin: 2rem auto 1rem;
+  max-width: 600px;
+}
+.search-container input {
+  flex: 1;
+  max-width: 400px;
+  padding: 0.75rem 1rem; 
+  border: none;
+  border-radius: 4px 0 0 4px; 
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+.search-container button {
+  padding: 0.75rem 1.5rem; 
+  border: none;
+  background: #006b6e; 
+  color: #fff; 
+  font-size: 1rem;
+  cursor: pointer; 
+  border-radius: 0 4px 4px 0;
+  transition: background 0.3s ease;
+}
+.search-container button:hover { background: #008c94; }
+
+/* Main Content */
+main { 
+  padding: 1rem 0 3rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* Grid */
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+  margin: 2rem auto 0;
+  transition: all 0.3s ease;
+}
+
+/* Country Card */
+.country-card {
+  background: #f9f9f9; /* Light gray card background */
+  border-radius: 8px;
+  overflow: hidden; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex; 
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+.country-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.country-card img {
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover;
+}
+.country-info { 
+  padding: 1rem; 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+}
+.country-info h3 { margin-bottom: 0.5rem; color: #004d99; }
+.country-info p { font-size: 0.9rem; margin-bottom: 1rem; flex: 1; color: #555; }
+.country-info button {
+  align-self: flex-start; 
+  padding: 0.5rem 1rem; 
+  border: none;
+  background: #004d99; 
+  color: #fff; 
+  cursor: pointer; 
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+.country-info button:hover { background: #003366; }
+
+/* Modal */
+.modal {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.6); 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1000;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  background: #fff; 
+  max-width: 700px; 
+  width: 90%;
+  border-radius: 8px; 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  overflow: hidden; 
+  animation: fadeIn 0.3s ease-out; 
+  position: relative;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-close {
+  position: absolute; 
+  top: 1rem; 
+  right: 1rem;
+  border: none; 
+  background: none; 
+  font-size: 1.5rem;
+  cursor: pointer; 
+  color: #555;
+}
+.modal-body { 
+  display: flex; 
+  gap: 1.5rem; 
+  padding: 2rem; 
+}
+.modal-flag img {
+  width: 160px; 
+  height: auto; 
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.modal-info { flex: 1; }
+.modal-info h2 {
+  font-size: 2rem; 
+  margin-bottom: 0.5rem; 
+  color: #004d99;
+}
+.modal-info p { margin-bottom: 0.75rem; color: #555; }
+.modal-section { margin-top: 1rem; }
+.modal-section h3 {
+  font-size: 1.25rem; 
+  color: #006b6e; 
+  margin-bottom: 0.5rem;
+}
+
+/* Weather */
+.weather-ui .weather-card {
+  display: flex; 
+  align-items: center;
+  background: #f1f8ff; 
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
+}
+.weather-icon { font-size: 2rem; margin-right: 1rem; }
+.weather-data p { margin: 0; font-weight: 600; color: #006b6e; }
+
+/* Close Details Button */
+.btn-close-details {
+  margin-top: 1.5rem; 
+  padding: 0.5rem 1.25rem;
+  background: #3f566d; 
+  color: #fff; 
+  border: none;
+  border-radius: 4px; 
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-close-details:hover { background: #2d3f52; }
+
+/* Footer */
+.footer { 
+  background: #243c46; 
+  color: #fff; 
+  text-align: center; 
+  padding: 1rem 0; 
+  position: fixed; 
+  bottom: 0; 
+  width: 100%;
+}
+.footer p { font-size: 0.9rem; }
